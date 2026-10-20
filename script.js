@@ -1,9 +1,11 @@
 let random = Math.round(Math.random() * 100);
 let attempts = 0;
 
+//Getting access to various elements so javascript can be applied
 const change = document.getElementById("heading");
 const input = document.getElementById("guess");
 
+//function to check if number is valid, too high, too low or just right. For guess button 
 function clickMe (){
     const value =input.value.trim();
     const uguess =Number(value);
@@ -21,7 +23,7 @@ function clickMe (){
         return;
     }
     
-    
+    //increasing number of attempts
     attempts++;
     document.getElementById("attempts").textContent = "Attempts: " + attempts;
     if(uguess > random){
@@ -33,7 +35,7 @@ function clickMe (){
         document.getElementById("play").disabled=false;
     }
 }
-
+//function to reset game and play again. For play Again button
 function resetGame(){
     random = Math.round(Math.random()*100);
     attempts=0;
